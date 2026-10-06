@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>เป็นแฟนกันนะ ❤️ | Will You Be Mine?</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+
+  <!-- Google Fonts: Itim & Prompt -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating background decorations -->
+  <div class="bg-decorations" id="bgDecorations"></div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Top Utility Navigation -->
+  <div class="top-nav">
+    <button class="icon-btn" id="musicToggleBtn" title="เปิด/ปิดเสียงเพลง" aria-label="Toggle Music">
+      <span id="musicIcon">🎵</span>
+    </button>
+  </div>
+
+  <main class="container">
+
+    <!-- ===================================================
+         STEP 1: INTERACTIVE QUESTION & PROPOSAL CARD
+         =================================================== -->
+    <section class="interactive-section" id="interactiveSection">
+      <div class="card-container">
+        <div class="washi-tape"></div>
+
+        <!-- Transparent Animated Cat Mascot with Heart -->
+        <div class="cat-mascot-wrapper">
+          <div class="cat-mascot-animation"></div>
+        </div>
+
+        <p class="sub-greeting" id="subGreeting">เค้ามีอะไรจะบอกแก...</p>
+        
+        <h1 class="main-question" id="mainQuestion">มีเรื่องอยากบอก เธออยากรู้มั้ย?</h1>
+        <p class="sweet-description" id="sweetDescription">
+          ลองตอบเค้าหน่อยสิครับ...
+        </p>
+
+        <!-- Interactive Buttons -->
+        <div class="btn-group" id="btnGroup">
+          <button class="btn-primary-action" id="btnOptionA">อยากรู้สิ! 🙋‍♀️</button>
+          <button class="btn-secondary-action" id="btnOptionB">ไม่อยากรู้ 🙅‍♀️</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         STEP 2: 3D STORY SECTION (เมื่อกดตกลงแล้ว)
+         =================================================== -->
+    <section class="story-section" id="storySection">
+      <div class="story-header">
+        <span class="story-badge">OUR SWEET MEMORIES</span>
+        <h2 class="story-main-title">ดูเราสองคนดิน่ารักมั้ย 🌸</h2>
+        <p class="story-sub-title">10 ความทรงจำดีๆของเค้าเอง</p>
+        <button class="btn-view-heart" id="btnViewHeart">
+          <span>❤️</span> กดอันติรวมพลังหัวใจของติ๋มให้ต๋อมแต๋ม
+        </button>
+      </div>
+
+      <!-- 3D Carousel Stage -->
+      <div class="carousel-stage" id="carouselStage">
+        <div class="carousel-deck" id="carouselDeck">
+          <!-- Story cards injected dynamically via JavaScript -->
+        </div>
+      </div>
+
+      <!-- Navigation & Playback Controls -->
+      <div class="controls-bar">
+        <button class="nav-arrow-btn" id="prevBtn" title="รูปก่อนหน้า" aria-label="Previous Photo">‹</button>
+        <button class="play-pause-btn" id="playPauseBtn">
+          <span id="playPauseIcon">⏸</span> <span id="playPauseText">หยุดเล่นชั่วคราว</span>
+        </button>
+        <button class="nav-arrow-btn" id="nextBtn" title="รูปถัดไป" aria-label="Next Photo">›</button>
+      </div>
+
+      <!-- Indicator Dots -->
+      <div class="dots-container" id="dotsContainer"></div>
+
+      <!-- Progress bar for autoplay -->
+      <div class="story-progress-wrap">
+        <div class="story-progress-bar" id="progressBar"></div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         STEP 3: HEART SHAPE PHOTO MOSAIC VIEW
+         =================================================== -->
+    <section class="heart-section" id="heartSection">
+      <div class="heart-header">
+        <h2 class="heart-title">ความทรงจำรูปหัวใจของเรา ❤️</h2>
+        <p class="heart-subtitle">ทุกๆ เศษเสี้ยวความทรงจำ ล้วนประกอบเป็นความรักของเรา</p>
+        <button class="btn-back-story" id="btnBackToStory">
+          <span>‹</span> กลับไปดูสตอรี่ 3 มิติ
+        </button>
+      </div>
+
+      <!-- 10 Photos Arranged into Heart Shape -->
+      <div class="heart-mosaic" id="heartMosaic">
+        <!-- Injected via JavaScript into 4 rows creating heart -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Teasing Toast -->
+  <div class="tease-toast" id="teaseToast">คิดดูใหม่อีกทีนะ 🥺</div>
+
+
+
+  <!-- Hidden YouTube Player Container for BGM https://youtu.be/6GC8JF2FOgA -->
+  <div id="youtubePlayer" style="position: fixed; width: 1px; height: 1px; opacity: 0; pointer-events: none; bottom: 0; left: 0;"></div>
+
+  <audio id="bgAudio" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
